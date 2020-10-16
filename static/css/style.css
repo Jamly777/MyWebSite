@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+*, *::before, *::after {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Anton', sans-serif;
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 1920px;
+  height: 1080px;
+  -webkit-animation: endFlash 12s infinite linear;
+          animation: endFlash 12s infinite linear;
+}
+@-webkit-keyframes endFlash {
+  0%, 89.999%, 95%, 100% {
+    background-color: transparent;
+  }
+  90% {
+    background-color: yellow;
+  }
+}
+@keyframes endFlash {
+  0%, 89.999%, 95%, 100% {
+    background-color: transparent;
+  }
+  90% {
+    background-color: yellow;
+  }
+}
+.flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(1058px 354px, 915px 519px, 948px 512px, 884px 618px, 919px 612px, 857px 727px, 998px 568px, 968px 572px, 1029px 473px, 990px 480px);
+          clip-path: polygon(1058px 354px, 915px 519px, 948px 512px, 884px 618px, 919px 612px, 857px 727px, 998px 568px, 968px 572px, 1029px 473px, 990px 480px);
+}
+
+.loadingBar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+  -webkit-animation: loading 12s linear infinite;
+          animation: loading 12s linear infinite;
+}
+@-webkit-keyframes loading {
+  0%, 11%, 90.001%, 100% {
+    top: 730px;
+  }
+  90% {
+    top: 350px;
+  }
+}
+@keyframes loading {
+  0%, 11%, 90.001%, 100% {
+    top: 730px;
+  }
+  90% {
+    top: 350px;
+  }
+}
+.sides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.side {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.side.left {
+  -webkit-clip-path: polygon(0 0, 1357px 0, 899px 528px, 935px 521px, 872px 626px, 908px 621px, 657px 100%, 0 100%);
+          clip-path: polygon(0 0, 1357px 0, 899px 528px, 935px 521px, 872px 626px, 908px 621px, 657px 100%, 0 100%);
+  -webkit-animation: leftSide 12s ease-in infinite, flashColor 12s linear infinite;
+          animation: leftSide 12s ease-in infinite, flashColor 12s linear infinite;
+}
+.side.right {
+  -webkit-clip-path: polygon(1247px 0, 1002px 471px, 1042px 464px, 980px 564px, 1014px 559px, 555px 100%, 100% 100%, 100% 0);
+          clip-path: polygon(1247px 0, 1002px 471px, 1042px 464px, 980px 564px, 1014px 559px, 555px 100%, 100% 100%, 100% 0);
+  -webkit-animation: rightSide 12s ease-in infinite, flashColor 12s linear infinite;
+          animation: rightSide 12s ease-in infinite, flashColor 12s linear infinite;
+}
+@-webkit-keyframes leftSide {
+  0%, 90.001%, 100% {
+    left: -100%;
+  }
+  10%, 90% {
+    left: 0%;
+  }
+}
+@keyframes leftSide {
+  0%, 90.001%, 100% {
+    left: -100%;
+  }
+  10%, 90% {
+    left: 0%;
+  }
+}
+@-webkit-keyframes rightSide {
+  0%, 90.001%, 100% {
+    left: 100%;
+  }
+  10%, 90% {
+    left: 0%;
+  }
+}
+@keyframes rightSide {
+  0%, 90.001%, 100% {
+    left: 100%;
+  }
+  10%, 90% {
+    left: 0%;
+  }
+}
+@-webkit-keyframes flashColor {
+  0%, 9.999%, 15%, 100% {
+    background-color: red;
+  }
+  10% {
+    background-color: white;
+  }
+}
+@keyframes flashColor {
+  0%, 9.999%, 15%, 100% {
+    background-color: red;
+  }
+  10% {
+    background-color: white;
+  }
+}
+.circle {
+  position: absolute;
+  top: calc(50% + 7px);
+  left: 50%;
+  width: 305px;
+  height: 305px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: white;
+  border: 7px solid black;
+  -webkit-animation: enter 12s infinite;
+          animation: enter 12s infinite;
+}
+
+.text {
+  font-size: 50px;
+  position: absolute;
+  top: calc(50% + 160px);
+  left: calc(50% + 40px);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-animation: enter 12s infinite;
+          animation: enter 12s infinite;
+}
+
+@-webkit-keyframes enter {
+  0%, 10%, 90.001%, 100% {
+    opacity: 0;
+  }
+  10.001%, 90% {
+    opacity: 1;
+  }
+}
+
+@keyframes enter {
+  0%, 10%, 90.001%, 100% {
+    opacity: 0;
+  }
+  10.001%, 90% {
+    opacity: 1;
+  }
+}
+.twitterLink {
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
+}
+.twitterLink img {
+  width: 2em;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: -webkit-filter 0.25s;
+  transition: -webkit-filter 0.25s;
+  transition: filter 0.25s;
+  transition: filter 0.25s, -webkit-filter 0.25s;
+}
+.twitterLink img:hover {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
